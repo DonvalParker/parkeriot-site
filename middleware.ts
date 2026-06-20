@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/maintenance") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
-    pathname === "/icon.svg" ||
+    pathname.startsWith("/icon") ||
     pathname.startsWith("/parkeriot-logo")
   ) {
     return NextResponse.next();
