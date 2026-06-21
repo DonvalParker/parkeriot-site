@@ -9,6 +9,7 @@ import logo from "@/public/parkeriot-logo.png";
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -31,7 +32,9 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active =
+              pathname === link.href ||
+              (link.href === "/resources" && pathname.startsWith("/resources/"));
             return (
               <Link
                 key={link.href}
@@ -71,7 +74,8 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`rounded-lg px-4 py-3 text-sm font-medium transition ${
-                  pathname === link.href
+                  pathname === link.href ||
+                  (link.href === "/resources" && pathname.startsWith("/resources/"))
                     ? "bg-brand-50 text-brand-700"
                     : "text-slate-600 hover:bg-slate-50 hover:text-brand-700"
                 }`}

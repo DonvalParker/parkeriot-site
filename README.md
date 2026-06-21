@@ -1,14 +1,16 @@
 # ParkerIoT Microsite
 
-A modern 3-page marketing microsite for **ParkerIoT Limited** — a Lancaster-based
+A modern marketing microsite for **ParkerIoT Limited** — a Lancaster-based
 embedded firmware, IoT and field systems engineering company. Built with Next.js
 (App Router), TypeScript, and Tailwind CSS.
 
 ## Pages
 
-- **Home** (`/`) — hero, services overview, capability/stack panel, and CTA.
+- **Home** (`/`) — hero, services overview, capability/stack panel, case studies, and CTA.
+- **Services** (`/services`) — detailed IoT engineering service descriptions.
+- **Resources** (`/resources`) — short technical notes and guides (Markdown-backed).
 - **About** (`/about`) — company intro, founder profile, values, capabilities, and registration details.
-- **Contact** (`/contact`) — contact details and a working (front-end) contact form.
+- **Contact** (`/contact`) — contact details and a working contact form (Formspree).
 
 ## Tech stack
 
@@ -16,6 +18,8 @@ embedded firmware, IoT and field systems engineering company. Built with Next.js
 - [React 18](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS 3](https://tailwindcss.com/)
+- [gray-matter](https://github.com/jonschlinkert/gray-matter) — Markdown frontmatter
+- [react-markdown](https://github.com/remarkjs/react-markdown) + [remark-gfm](https://github.com/remarkjs/remark-gfm) — article rendering
 
 ## Getting started
 
@@ -37,22 +41,63 @@ npm start
 
 ```
 app/
-  layout.tsx        # Shared shell: navbar + footer + metadata
-  page.tsx          # Home
-  about/page.tsx    # About
-  contact/page.tsx  # Contact
-  globals.css       # Tailwind layers + design tokens
+  layout.tsx              # Root layout + metadata
+  (site)/
+    layout.tsx            # Navbar + footer shell
+    page.tsx              # Home
+    services/page.tsx     # Services
+    resources/
+      page.tsx            # Resources index
+      [slug]/page.tsx     # Individual articles
+    about/page.tsx        # About
+    contact/page.tsx      # Contact
+  globals.css             # Tailwind layers + design tokens
+  sitemap.ts              # Auto-includes resource articles
+  robots.ts
+content/
+  resources/              # Markdown articles (see below)
+    _template.md          # Copy this to create a new article
+lib/
+  resources.ts            # Read articles from disk (build time)
+  resources-types.ts      # Shared types + helpers
 components/
-  Navbar.tsx        # Sticky responsive nav
+  Navbar.tsx
   Footer.tsx
-  Section.tsx       # Reusable section heading
-  ContactForm.tsx   # Client-side form (stubbed submit)
+  Section.tsx
+  ArticleCard.tsx
+  MarkdownContent.tsx
+  ResourceTopicFilter.tsx
+  ContactForm.tsx
+  CaseStudyCards.tsx
+  ...
 ```
+
+## Adding a resource article
+
+Articles live as Markdown files in `content/resources/`. Files starting with `_` are ignored.
+
+1. Copy `content/resources/_template.md` to a new file, e.g. `my-article-slug.md`.
+2. Edit the frontmatter and body.
+3. Run `npm run dev` to preview at `/resources/my-article-slug`.
+4. Commit and push — Vercel rebuilds; the sitemap picks up the new URL automatically.
+
+The URL slug comes from the filename: `my-article-slug.md` → `/resources/my-article-slug`.
+
+**Frontmatter fields:**
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| `title` | Yes | Article heading |
+| `topic` | Yes | Used for filter pills on the index |
+| `date` | Yes | ISO date; newest first on index |
+| `excerpt` | Yes | Card summary + SEO description |
+| `readTime` | No | e.g. `"5 min"` |
+| `relatedService` | No | Links to `/services#…` — `discovery`, `firmware`, `linux`, `connectivity`, `data`, `prototype`, `troubleshooting`, `hardware` |
 
 ## Brand assets
 
 - `public/parkeriot-logo.png` — trimmed wordmark used in the navbar and footer.
-- `app/icon.svg` — favicon (chip mark in the brand slate `#3f5159`).
+- `app/icon.png` — favicon.
 - `scripts/prepare-logo.mjs` — one-off script that crops the source logo to a
   tight bounding box (run with `node scripts/prepare-logo.mjs`).
 

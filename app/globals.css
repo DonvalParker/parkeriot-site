@@ -41,4 +41,74 @@ body {
   .card {
     @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md;
   }
+
+  .prose-resource {
+    @apply text-base leading-relaxed text-slate-600;
+  }
+
+  .prose-resource > * + * {
+    @apply mt-4;
+  }
+
+  .prose-resource h2 {
+    @apply mt-10 text-xl font-semibold text-slate-900 first:mt-0;
+  }
+
+  .prose-resource h3 {
+    @apply mt-8 text-lg font-semibold text-slate-900;
+  }
+
+  .prose-resource ul,
+  .prose-resource ol {
+    @apply ml-6 space-y-2;
+  }
+
+  .prose-resource ul {
+    @apply list-disc;
+  }
+
+  .prose-resource ol {
+    @apply list-decimal;
+  }
+
+  .prose-resource li {
+    @apply text-slate-600;
+  }
+
+  .prose-resource strong {
+    @apply font-semibold text-slate-800;
+  }
+
+  .prose-resource a {
+    @apply font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 transition hover:text-brand-800 hover:decoration-brand-400;
+  }
+
+  .prose-resource code {
+    @apply rounded bg-slate-100 px-1.5 py-0.5 font-mono text-sm text-slate-800;
+  }
+
+  .prose-resource pre {
+    @apply overflow-x-auto rounded-xl border border-slate-200 bg-slate-50 p-4;
+  }
+
+  .prose-resource pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+
+  .prose-resource table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .prose-resource th,
+  .prose-resource td {
+    @apply border border-slate-200 px-3 py-2 text-left;
+  }
+
+  .prose-resource th {
+    @apply bg-slate-50 font-semibold text-slate-800;
+  }
+
+  .prose-resource blockquote {
+    @apply border-l-4 border-brand-500 pl-5 font-medium italic text-slate-800;
+  }
 }
