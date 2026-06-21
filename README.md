@@ -60,7 +60,7 @@ components/
 
 1. Push this repo to GitHub and import it in [Vercel](https://vercel.com).
 2. In Vercel → **Settings → Environment Variables**, add:
-   - `FORMSPREE_FORM_ID` — from your [Formspree](https://formspree.io) form (see below)
+   - `NEXT_PUBLIC_FORMSPREE_FORM_ID` — from your [Formspree](https://formspree.io) form (see below)
 3. Add domains `parkeriot.uk` and `www.parkeriot.uk` in Vercel, then point IONOS DNS:
    - **A** `@` → Vercel IP (shown in Vercel)
    - **CNAME** `www` → `cname.vercel-dns.com`
@@ -70,7 +70,10 @@ components/
 1. Sign up at [formspree.io](https://formspree.io) and create a new form.
 2. Set the notification email to **info@parkeriot.uk**.
 3. Copy the form ID from the endpoint URL (`https://formspree.io/f/abcxyz` → `abcxyz`).
-4. Add `FORMSPREE_FORM_ID=abcxyz` in Vercel (and locally in `.env.local` for testing).
+4. Add `NEXT_PUBLIC_FORMSPREE_FORM_ID=abcxyz` in Vercel (and locally in `.env.local` for testing).
+5. In Formspree → **Settings** for the form:
+   - Enable **Spam filtering** (and reCAPTCHA if you want stronger protection).
+   - Under **Allowed domains**, add `parkeriot.uk` and `www.parkeriot.uk` so submissions are only accepted from your site.
 
 ## Next steps
 

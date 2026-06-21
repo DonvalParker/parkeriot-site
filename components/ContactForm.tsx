@@ -2,9 +2,25 @@
 
 import { useForm, ValidationError } from "@formspree/react";
 
-const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? "mrewzbnz";
+const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
 export default function ContactForm() {
+  if (!formId) {
+    return (
+      <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-6 text-sm text-amber-900">
+        The contact form is not configured. Email{" "}
+        <a href="mailto:info@parkeriot.uk" className="font-medium underline">
+          info@parkeriot.uk
+        </a>{" "}
+        directly.
+      </div>
+    );
+  }
+
+  return <ContactFormFields formId={formId} />;
+}
+
+function ContactFormFields({ formId }: { formId: string }) {
   const [state, handleSubmit] = useForm(formId);
 
   if (state.succeeded) {
@@ -26,6 +42,15 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <input type="hidden" name="_subject" value="ParkerIoT contact form enquiry" />
+      {/* Honeypot — bots that fill every field are rejected by Formspree */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+      />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="name" label="Name" type="text" placeholder="Jane Doe" required errors={state.errors} />
