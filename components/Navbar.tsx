@@ -8,6 +8,7 @@ import logo from "@/public/parkeriot-logo.png";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -46,7 +47,7 @@ export default function Navbar() {
             );
           })}
           <Link href="/contact" className="btn-primary ml-2 px-5 py-2">
-            Get in touch
+            Book a discovery call
           </Link>
         </div>
 

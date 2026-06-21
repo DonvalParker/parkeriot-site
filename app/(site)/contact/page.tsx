@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with ParkerIoT — embedded firmware, IoT and field systems engineering in Lancaster, UK.",
+    "Book a technical discovery call with ParkerIoT — UK-based IoT engineering for connected devices, prototypes, field deployments, and system troubleshooting.",
 };
 
 const details = [
@@ -41,8 +41,8 @@ export default function ContactPage() {
       <div className="container-tight py-20 lg:py-24">
         <SectionHeading
           eyebrow="Contact"
-          title="Let's build something connected"
-          description="Whether you're scoping a prototype or need a deployment commissioned and supported, send a message and you'll get a reply within one business day."
+          title="Book a technical discovery call"
+          description="Whether you are scoping a prototype, planning a field deployment, or need help with an unreliable connected system — send your project details and you will get a reply within one business day."
         />
 
         <div className="mx-auto mt-14 grid max-w-5xl gap-10 lg:grid-cols-5">

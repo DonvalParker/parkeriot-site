@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="sm:col-span-2 lg:col-span-2">
           <Image src={logo} alt="ParkerIoT" className="h-7 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
-            Embedded firmware, IoT and field systems engineering — taking connected
-            hardware from prototype through installation, commissioning and long-term
-            reliability.
+            UK-based IoT engineering — connected device development, embedded firmware,
+            Raspberry Pi and Linux edge systems, remote monitoring, and field deployment
+            support.
           </p>
         </div>
 
@@ -21,6 +21,11 @@ export default function Footer() {
             <li>
               <Link href="/" className="text-slate-500 transition hover:text-brand-700">
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="text-slate-500 transition hover:text-brand-700">
+                Services
               </Link>
             </li>
             <li>

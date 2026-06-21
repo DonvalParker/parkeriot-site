@@ -5,48 +5,21 @@ import { SectionHeading } from "@/components/Section";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ParkerIoT Limited is a Lancaster-based engineering company led by Donval Parker MEng, IET Member — specialists in embedded firmware, IoT and field systems.",
+    "ParkerIoT is led by Donval Parker — a hands-on IoT and embedded systems engineer providing UK-based connected device development, field deployment, and remote monitoring support.",
 };
 
 const values = [
   {
     title: "Built for the field",
-    body: "Real deployments mean flaky networks, wide temperature swings and unattended sites. Systems are engineered for automated recovery and long-term reliability.",
+    body: "Real deployments mean flaky networks, power issues, and unattended sites. Systems are engineered for automated recovery, remote diagnostics, and long-term reliability.",
   },
   {
-    title: "Whole-lifecycle ownership",
-    body: "From prototype and firmware through installation, commissioning and remote support — one engineer accountable across the full pipeline.",
+    title: "Full-system ownership",
+    body: "From firmware and wiring through Linux services, connectivity, cloud data flows, installation, and remote support — one engineer accountable across the joins.",
   },
   {
-    title: "Pragmatic and open",
-    body: "Standard protocols, clean documentation and maintainable code. Your data and your stack stay yours, and stay flexible.",
-  },
-];
-
-const capabilities = [
-  {
-    area: "Embedded & Firmware",
-    items: "C/C++, Python, FreeRTOS, AVR, ARM Cortex, PIC, ESP32, Raspberry Pi, sensor integration, device diagnostics",
-  },
-  {
-    area: "Connectivity & Protocols",
-    items: "Wi-Fi, BLE, LoRa/LoRaWAN, Modbus, I2C, SPI, QSPI, UART, MQTT, VPN, DHCP/DNS",
-  },
-  {
-    area: "Linux & Edge Systems",
-    items: "Linux, systemd, Node-RED, Python services, automated recovery, remote access, data buffering & upload",
-  },
-  {
-    area: "Data & Monitoring",
-    items: "InfluxDB, Grafana, Zabbix, cloud-connected data pipelines, low-power IoT telemetry",
-  },
-  {
-    area: "CAD, PCB & Tools",
-    items: "KiCad, FreeCAD, SolidWorks, Fusion 360, Segger SystemView, Doxygen, MPLAB, Microchip Studio, LabVIEW, Qt",
-  },
-  {
-    area: "Web & Interfaces",
-    items: "HTML, CSS, JavaScript, PHP, SQL, LAMP stack, GUI prototyping and dashboard support",
+    title: "Pragmatic and maintainable",
+    body: "Standard protocols, clean documentation, and maintainable code. Your data and your stack stay yours, and stay supportable.",
   },
 ];
 
@@ -67,53 +40,60 @@ export default function AboutPage() {
               About ParkerIoT
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              An engineering company that ships hardware
+              Hands-on IoT engineering, close to the technical detail
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              ParkerIoT Limited is a Lancaster-based engineering company specialising in
-              embedded firmware, low-power IoT and Linux edge systems. We take connected
-              hardware all the way from prototype to working installations in the real
-              world — and keep them running.
+              ParkerIoT helps organisations design, prototype, deploy, troubleshoot, and support
+              connected devices and IoT systems — bridging embedded firmware, hardware, Linux edge
+              systems, connectivity, cloud data, and field deployment.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Founder */}
       <section className="py-20">
         <div className="container-tight grid gap-12 lg:grid-cols-5 lg:items-start">
           <div className="lg:col-span-2">
-            <SectionHeading
-              align="left"
-              eyebrow="Who you work with"
-              title="Led by Donval Parker"
-            />
+            <SectionHeading align="left" eyebrow="Who you work with" title="Led by Donval Parker" />
             <p className="mt-2 text-sm font-semibold text-brand-700">
               MEng (Hons) Mechatronic Engineering · IET Member
             </p>
           </div>
           <div className="lg:col-span-3">
             <p className="text-base leading-relaxed text-slate-600">
-              Donval is a design, firmware and field systems engineer with over six years
-              of experience across embedded firmware, circuit design, low-power IoT, Linux
-              edge systems, remote diagnostics, product prototyping and field deployment.
+              Donval is a hands-on design engineer, firmware and software engineer, and
+              mechatronics/IoT specialist with experience across embedded systems, connected devices,
+              Linux-based edge systems, field deployments, remote monitoring, networked
+              infrastructure, and practical automation.
             </p>
             <p className="mt-4 text-base leading-relaxed text-slate-600">
-              That experience spans developing firmware and edge software for ESP32 and
-              Raspberry Pi devices, building unattended Linux field infrastructure, and
-              installing, commissioning and troubleshooting live deployments — across
-              hardware, networking, cellular connectivity and physical installation. He
-              holds an MEng in Mechatronic Engineering from Lancaster University and is a
-              Member of the Institution of Engineering and Technology.
+              He works close to the technical detail — from firmware and wiring through to cloud
+              data flows and remote support. That includes ESP32 and microcontroller development,
+              Raspberry Pi and embedded Linux, MQTT and Node-RED, 4G/LTE connectivity, VPN and
+              secure remote access, sensor integration, and commissioning systems that need to work
+              when they leave the bench.
             </p>
-            <Link href="/contact" className="btn-primary mt-8">
-              Work with ParkerIoT
-            </Link>
+            <blockquote className="mt-6 border-l-4 border-brand-500 pl-5 text-base font-medium italic text-slate-800">
+              I care about whether the system works when it leaves the bench, not just whether the
+              demo looks good.
+            </blockquote>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              ParkerIoT provides UK-based IoT, embedded, and connected systems support for startups,
+              SMEs, product teams, charities, and small industrial teams who need a specialist
+              engineering partner — not a large agency.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/contact" className="btn-primary">
+                Book a technical discovery call
+              </Link>
+              <Link href="/services" className="btn-ghost">
+                Explore IoT services
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
       <section className="border-t border-slate-200 bg-slate-50 py-20">
         <div className="container-tight">
           <SectionHeading eyebrow="How we work" title="What guides the work" />
@@ -128,28 +108,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-20">
-        <div className="container-tight">
-          <SectionHeading
-            eyebrow="Capabilities"
-            title="The full toolkit"
-            description="A broad, hands-on skill set across the embedded, connectivity, edge and data layers — plus the CAD and PCB tools to design the hardware in the first place."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((c) => (
-              <div key={c.area} className="card">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-700">
-                  {c.area}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{c.items}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company details */}
       <section className="border-t border-slate-200 bg-slate-50 py-16">
         <div className="container-tight">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
