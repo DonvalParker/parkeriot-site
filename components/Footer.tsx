@@ -80,6 +80,9 @@ export default function Footer() {
             <Link href="/privacy" className="font-medium text-slate-500 transition hover:text-brand-700">
               Privacy notice
             </Link>
+            <Link href="/privacy#cookies" className="font-medium text-slate-500 transition hover:text-brand-700">
+              Cookies
+            </Link>
           </span>
           <p>
             ParkerIoT Limited, registered in England &amp; Wales, company no. 16308954, registered
