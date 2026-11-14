@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useForm, ValidationError } from "@formspree/react";
 
 const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
@@ -13,6 +14,7 @@ export default function ContactForm() {
           info@parkeriot.uk
         </a>{" "}
         directly.
+        <EnquiryNotice className="mt-3" />
       </div>
     );
   }
@@ -80,10 +82,22 @@ function ContactFormFields({ formId }: { formId: string }) {
         errors={state.errors}
         className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
       />
+      <EnquiryNotice />
       <button type="submit" disabled={state.submitting} className="btn-primary w-full disabled:opacity-60">
         {state.submitting ? "Sending..." : "Send message"}
       </button>
     </form>
+  );
+}
+
+function EnquiryNotice({ className = "" }: { className?: string }) {
+  return (
+    <p className={`text-xs leading-relaxed text-slate-500 ${className}`}>
+      We use these details only to reply to your enquiry. We do not add you to a mailing list.{" "}
+      <Link href="/privacy" className="font-medium text-brand-700 underline">
+        Privacy notice
+      </Link>
+    </p>
   );
 }
 
