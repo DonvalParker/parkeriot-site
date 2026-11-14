@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/public/parkeriot-logo.png";
 
 export const metadata: Metadata = {
@@ -25,6 +26,14 @@ export default function MaintenancePage() {
         >
           info@parkeriot.uk
         </a>
+        <p className="mt-10 text-xs leading-relaxed text-slate-400">
+          ParkerIoT Limited, registered in England &amp; Wales, company no. 16308954, registered
+          office 42 Mayfield Avenue, Lancaster, LA1 2PF.
+          <br />
+          <Link href="/privacy" className="font-medium text-slate-500 underline">
+            Privacy notice
+          </Link>
+        </p>
       </div>
     </div>
   );

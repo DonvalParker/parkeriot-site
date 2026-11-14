@@ -25,9 +25,10 @@ const values = [
 
 const company = [
   { label: "Registered name", value: "ParkerIoT Limited" },
+  { label: "Registered in", value: "England & Wales" },
   { label: "Company number", value: "16308954" },
   { label: "Incorporated", value: "11 March 2025" },
-  { label: "Registered office", value: "42 Mayfield Avenue, Lancaster, England, LA1 2PF" },
+  { label: "Registered office", value: "42 Mayfield Avenue, Lancaster, LA1 2PF" },
 ];
 
 export default function AboutPage() {
@@ -110,7 +111,7 @@ export default function AboutPage() {
 
       <section className="border-t border-slate-200 bg-slate-50 py-16">
         <div className="container-tight">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {company.map((c) => (
               <div key={c.label}>
                 <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
