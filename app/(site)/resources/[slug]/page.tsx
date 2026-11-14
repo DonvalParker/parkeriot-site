@@ -53,7 +53,7 @@ export default async function ResourceArticlePage({ params }: PageProps) {
             <span className="mt-6 inline-block rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
               {article.topic}
             </span>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 text-3xl font-bold tracking-[-0.035em] text-slate-900 sm:text-4xl lg:text-5xl">
               {article.title}
             </h1>
             {meta && <p className="mt-4 text-sm text-slate-500">{meta}</p>}

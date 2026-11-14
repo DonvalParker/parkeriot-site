@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import logo from "@/public/parkeriot-logo.png";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -22,12 +21,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur">
       <nav className="container-tight flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center" aria-label="ParkerIoT home">
-          <Image
-            src={logo}
-            alt="ParkerIoT"
-            priority
-            className="h-7 w-auto sm:h-8"
-          />
+          <Logo priority className="h-7 w-auto sm:h-8" />
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">

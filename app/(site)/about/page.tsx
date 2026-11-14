@@ -40,7 +40,7 @@ export default function AboutPage() {
             <span className="inline-block rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
               About ParkerIoT
             </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-bold tracking-[-0.035em] text-slate-900 sm:text-5xl">
               Hands-on IoT engineering, close to the technical detail
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">

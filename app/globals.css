@@ -4,6 +4,19 @@
 
 :root {
   color-scheme: light;
+  /* Official ParkerIoT scale. Do not introduce a second accent. */
+  --brand-50: #f5f7f8;
+  --brand-100: #e7ecee;
+  --brand-200: #cfd9dc;
+  --brand-300: #aebec3;
+  --brand-400: #7e969d;
+  --brand-500: #5b757d;
+  --brand-600: #475e66;
+  --brand-700: #3f5159;
+  --brand-800: #36454c;
+  --brand-900: #2f3a40;
+  --brand-950: #1c2327;
+  --font-ui: var(--font-sans), Inter, system-ui, sans-serif;
 }
 
 html {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudyCards, { CaseStudyCTA } from "@/components/CaseStudyCards";
+import FamilyIcon, { type FamilyIconName } from "@/components/FamilyIcon";
+import Logo from "@/components/Logo";
 import { SectionHeading } from "@/components/Section";
 import StackBadges from "@/components/StackBadges";
 import SystemDiagram from "@/components/SystemDiagram";
@@ -28,60 +30,70 @@ const painPoints = [
   "There is no clear path from proof of concept to deployment",
 ];
 
-const services = [
+const services: {
+  title: string;
+  body: string;
+  href: string;
+  mark: FamilyIconName;
+}[] = [
   {
     title: "IoT Product & System Discovery",
     body: "Feasibility review, requirements capture, architecture options, risk assessment, connectivity choices, device strategy, and practical next steps — before you commit to the wrong stack.",
     href: "/services#discovery",
-    icon: <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />,
+    mark: "tools",
   },
   {
     title: "Embedded Firmware Development",
     body: "ESP32 and microcontroller firmware in C/C++ and MicroPython — sensor integration, state machines, OTA update strategy, low-power design, debugging, and refactoring of existing code.",
     href: "/services#firmware",
-    icon: <path d="M9 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM11 18h2" />,
+    mark: "code",
   },
   {
     title: "Raspberry Pi & Embedded Linux Systems",
     body: "Raspberry Pi edge systems with systemd services, boot reliability, local data storage, camera and audio workflows, edge processing, diagnostics, and remote management.",
     href: "/services#linux",
-    icon: <path d="M4 7h16M4 12h16M4 17h16M8 4v3M16 17v3" />,
+    mark: "gateway",
   },
   {
     title: "Connectivity & Remote Access",
     body: "4G/LTE routers, Wi-Fi, Ethernet, VPNs, WireGuard, Tailscale, SSH/Mosh, remote diagnostics, SIM and data planning, and WAN failover for sites you cannot always visit.",
     href: "/services#connectivity",
-    icon: <path d="M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0M12 20h.01" />,
+    mark: "radio",
   },
   {
     title: "IoT Data, Dashboards & Automation",
     body: "MQTT, Node-RED, APIs, databases, cloud workflows, alerting, reporting, dashboards, data export, and integrations with the services you already use.",
     href: "/services#data",
-    icon: <path d="M4 19V5M4 19h16M8 16l3-4 3 2 4-6" />,
+    mark: "cloud",
   },
   {
     title: "Prototype, MVP & Field Trial Support",
     body: "Quick proof-of-concept builds, prototype wiring, bench and field testing, enclosure planning, installation design, commissioning, and pilot deployments.",
     href: "/services#prototype",
-    icon: <path d="M12 2l9 5v10l-9 5-9-5V7zM12 12l9-5M12 12v10M12 12L3 7" />,
+    mark: "sensor",
   },
   {
     title: "Troubleshooting & System Hardening",
     body: "Debugging unreliable systems, improving service resilience, logging, watchdogs, monitoring, deployment scripts, update strategy, and ongoing field support.",
     href: "/services#troubleshooting",
-    icon: <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />,
+    mark: "tools",
   },
   {
     title: "Hardware & PCB Support",
     body: "Schematic review, component selection, ESP32 and Raspberry Pi carrier ideas, PCB design support, prototype review, power design, and design-for-deployment advice.",
     href: "/services#hardware",
-    icon: <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />,
+    mark: "chip",
   },
 ];
 
-const capabilityLayers = [
+const capabilityLayers: {
+  layer: string;
+  mark: FamilyIconName;
+  items: string[];
+}[] = [
   {
     layer: "Device Layer",
+    mark: "sensor",
     items: [
       "ESP32",
       "Raspberry Pi",
@@ -95,6 +107,7 @@ const capabilityLayers = [
   },
   {
     layer: "Edge Layer",
+    mark: "gateway",
     items: [
       "Embedded Linux",
       "systemd services",
@@ -108,6 +121,7 @@ const capabilityLayers = [
   },
   {
     layer: "Connectivity Layer",
+    mark: "radio",
     items: [
       "Wi-Fi",
       "Ethernet",
@@ -122,6 +136,7 @@ const capabilityLayers = [
   },
   {
     layer: "Cloud & Data Layer",
+    mark: "cloud",
     items: [
       "APIs",
       "Cloud functions",
@@ -135,6 +150,7 @@ const capabilityLayers = [
   },
   {
     layer: "Deployment Layer",
+    mark: "tools",
     items: [
       "Installation planning",
       "Commissioning",
@@ -252,7 +268,7 @@ export default function HomePage() {
               <span className="h-2 w-2 animate-pulse rounded-full bg-brand-500" />
               UK-based IoT engineering
             </span>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-[-0.035em] text-slate-900 sm:text-5xl lg:text-6xl">
               Practical IoT engineering for connected devices, field systems, and remote monitoring
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
@@ -306,7 +322,7 @@ export default function HomePage() {
                 key={point}
                 className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-relaxed text-slate-700"
               >
-                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red-400" />
+                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-600" />
                 {point}
               </li>
             ))}
@@ -368,11 +384,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <Link key={s.title} href={s.href} className="card group block">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 transition group-hover:bg-brand-100">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
-                    {s.icon}
-                  </svg>
-                </div>
+                <FamilyIcon name={s.mark} className="h-12 w-12" />
                 <h3 className="mt-5 text-base font-semibold text-slate-900 group-hover:text-brand-700">
                   {s.title}
                 </h3>
@@ -399,7 +411,8 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-5">
             {capabilityLayers.map((layer) => (
               <div key={layer.layer} className="card bg-white">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-700">
+                <FamilyIcon name={layer.mark} className="h-11 w-11" />
+                <h3 className="mt-4 text-sm font-semibold uppercase tracking-wider text-brand-700">
                   {layer.layer}
                 </h3>
                 <ul className="mt-4 space-y-2">
@@ -483,7 +496,8 @@ export default function HomePage() {
       <section className="pb-20">
         <div className="container-tight">
           <div className="overflow-hidden rounded-3xl bg-brand-700 p-10 text-center sm:p-16">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <Logo variant="white" className="mx-auto h-8 w-auto sm:h-10" />
+            <h2 className="mt-8 text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl">
               Need a practical IoT engineer?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-brand-100">

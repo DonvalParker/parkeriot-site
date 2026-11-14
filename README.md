@@ -97,10 +97,13 @@ The URL slug comes from the filename: `my-article-slug.md` → `/resources/my-ar
 
 ## Brand assets
 
-- `public/parkeriot-logo.png` — trimmed wordmark used in the navbar and footer.
-- `app/icon.png` — favicon.
-- `scripts/prepare-logo.mjs` — one-off script that crops the source logo to a
-  tight bounding box (run with `node scripts/prepare-logo.mjs`).
+Official ParkerIoT marks. The wordmark is a single steel-slate colour, `#3F5159` (`brand-700`), on white. UI type is Inter. Do not recolour the mark, add an orange or midnight accent, or switch the site to a dark theme.
+
+- `public/parkeriot-logo.png` and `public/parkeriot-logo.svg` — slate wordmark for light surfaces (navbar, footer, maintenance).
+- `public/parkeriot-logo-white.png` and `public/parkeriot-logo-white.svg` — white wordmark, only on the `#3F5159` band. The white SVG is the slate geometry with a `#FFFFFF` fill, matching the white PNG. The kit's white and midnight SVG files were the same path as the slate master.
+- `public/brand/` — parent chip and illustrative product-family icons. These are not separate product logos.
+- `app/favicon.ico`, `public/favicon-*.png`, `public/apple-touch-icon.png`, and `public/site.webmanifest` — browser and home-screen icons. Theme colour `#3F5159`.
+- `app/opengraph-image.png` — social preview, wordmark on white.
 
 ## Deploy (Vercel + IONOS DNS)
 
