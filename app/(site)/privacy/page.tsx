@@ -134,17 +134,17 @@ export default function PrivacyPage() {
             operations. They are not a marketing record.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">Cookies</h2>
+          <h2
+            id="cookies"
+            className="mt-12 scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900"
+          >
+            Cookies
+          </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
-            This site does not use analytics or advertising cookies. There is no cookie banner,
-            because ordinary browsing does not set a cookie you would need to opt into.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">
-            The only cookie is <span className="font-medium text-slate-800">maintenance_bypass</span>.
-            It is strictly necessary, and it is set only if someone opens a private link while the
-            site is in maintenance mode. It remembers that this browser may view the site during
-            that maintenance window. It is httpOnly, lasts 7 days, and is not used for tracking.
-            Most visitors never receive it.
+            Ordinary browsing sets no cookie. The only cookie is{" "}
+            <span className="font-medium text-slate-800">maintenance_bypass</span>. It is strictly
+            necessary, set only from a private maintenance link, lasts 7 days, and is not used for
+            tracking.
           </p>
 
           <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">Your rights</h2>
