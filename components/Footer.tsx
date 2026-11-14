@@ -74,12 +74,17 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="container-tight flex flex-col gap-2 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} ParkerIoT Limited. All rights reserved.</span>
-          <span>
-            Registered in England &amp; Wales, company no. 16308954 — 42 Mayfield Avenue,
-            Lancaster, LA1 2PF.
+        <div className="container-tight flex flex-col gap-2 py-6 text-xs text-slate-400">
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span>© {new Date().getFullYear()} ParkerIoT Limited. All rights reserved.</span>
+            <Link href="/privacy" className="font-medium text-slate-500 transition hover:text-brand-700">
+              Privacy notice
+            </Link>
           </span>
+          <p>
+            ParkerIoT Limited, registered in England &amp; Wales, company no. 16308954, registered
+            office 42 Mayfield Avenue, Lancaster, LA1 2PF.
+          </p>
         </div>
       </div>
     </footer>

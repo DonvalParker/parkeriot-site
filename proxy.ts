@@ -6,6 +6,7 @@ const BYPASS_COOKIE = "maintenance_bypass";
 function isMaintenanceExempt(pathname: string): boolean {
   return (
     pathname.startsWith("/maintenance") ||
+    pathname === "/privacy" ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/icon") ||
