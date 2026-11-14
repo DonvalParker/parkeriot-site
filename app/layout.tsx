@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { connection } from "next/server";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -34,11 +35,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Nonces are per request, so the document cannot be served from a static cache.
+  await connection();
+
   return (
     <html lang="en-GB" className={inter.variable}>
       <body className="flex min-h-screen flex-col bg-white">{children}</body>

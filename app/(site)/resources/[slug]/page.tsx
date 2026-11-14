@@ -9,15 +9,18 @@ import {
 import { getAllArticles, getArticleBySlug } from "@/lib/resources";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getAllArticles().map((article) => ({ slug: article.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const article = getArticleBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) return { title: "Article not found" };
 
   return {
@@ -26,8 +29,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function ResourceArticlePage({ params }: PageProps) {
-  const article = getArticleBySlug(params.slug);
+export default async function ResourceArticlePage({ params }: PageProps) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
   const meta = [formatArticleDate(article.date), article.readTime].filter(Boolean).join(" · ");
