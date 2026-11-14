@@ -5,25 +5,24 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "gray-matter": "^4.0.3",
-    "next": "^14.2.35",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "20.14.10",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "autoprefixer": "10.4.19",
-    "postcss": "^8.5.10",
-    "sharp": "^0.35.2",
+    "postcss": "^8.5.33",
+    "sharp": "^0.35.5",
     "tailwindcss": "3.4.6",
     "typescript": "5.5.3"
   }

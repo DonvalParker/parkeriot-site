@@ -14,7 +14,7 @@ embedded firmware, IoT and field systems engineering company. Built with Next.js
 
 ## Tech stack
 
-- [Next.js 14](https://nextjs.org/) — App Router
+- [Next.js 16](https://nextjs.org/) — App Router
 - [React 18](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS 3](https://tailwindcss.com/)
@@ -40,6 +40,7 @@ npm start
 ## Project structure
 
 ```
+proxy.ts                  # CSP nonce and maintenance gate
 app/
   layout.tsx              # Root layout + metadata
   (site)/
@@ -109,6 +110,8 @@ The URL slug comes from the filename: `my-article-slug.md` → `/resources/my-ar
 3. Add domains `parkeriot.uk` and `www.parkeriot.uk` in Vercel, then point IONOS DNS:
    - **A** `@` → Vercel IP (shown in Vercel)
    - **CNAME** `www` → `cname.vercel-dns.com`
+
+   The live certificate currently covers only `parkeriot.uk`. Browsers reject `https://www.parkeriot.uk` until that host is added on the Vercel project and the certificate is reissued.
 
 ### Contact form (Formspree)
 
