@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Steel-slate palette derived from the ParkerIoT logo (~#3f5159).
+        // Official ParkerIoT scale. Primary is brand-700 (#3F5159).
+        // The experimental midnight palette is not part of the site.
         brand: {
           50: "#f5f7f8",
           100: "#e7ecee",

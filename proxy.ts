@@ -10,7 +10,14 @@ function isMaintenanceExempt(pathname: string): boolean {
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/icon") ||
+    pathname.startsWith("/apple-icon") ||
+    pathname.startsWith("/apple-touch-icon") ||
+    pathname.startsWith("/favicon") ||
     pathname.startsWith("/parkeriot-logo") ||
+    pathname.startsWith("/brand/") ||
+    pathname === "/site.webmanifest" ||
+    pathname.startsWith("/opengraph-image") ||
+    pathname.startsWith("/twitter-image") ||
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml"
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FamilyIcon, { type FamilyIconName } from "@/components/FamilyIcon";
 import { SectionHeading } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -8,9 +9,17 @@ export const metadata: Metadata = {
     "IoT engineering services from ParkerIoT — embedded firmware, Raspberry Pi and embedded Linux, connectivity, MQTT and Node-RED, prototype development, troubleshooting, and hardware support.",
 };
 
-const services = [
+const services: {
+  id: string;
+  mark: FamilyIconName;
+  title: string;
+  summary: string;
+  body: string[];
+  includes: string[];
+}[] = [
   {
     id: "discovery",
+    mark: "tools",
     title: "IoT Product & System Discovery",
     summary:
       "Structured technical discovery before you commit budget to the wrong architecture or connectivity path.",
@@ -29,6 +38,7 @@ const services = [
   },
   {
     id: "firmware",
+    mark: "code",
     title: "Embedded Firmware Development",
     summary:
       "Firmware for ESP32 and microcontrollers — from new development through debugging and refactoring of existing code.",
@@ -48,6 +58,7 @@ const services = [
   },
   {
     id: "linux",
+    mark: "gateway",
     title: "Raspberry Pi & Embedded Linux Systems",
     summary:
       "Linux edge systems that run reliably unattended — with proper services, storage, diagnostics, and remote management.",
@@ -67,6 +78,7 @@ const services = [
   },
   {
     id: "connectivity",
+    mark: "radio",
     title: "Connectivity & Remote Access",
     summary:
       "Get devices online, keep them reachable, and make remote support practical — including 4G/LTE, VPN, and failover.",
@@ -86,6 +98,7 @@ const services = [
   },
   {
     id: "data",
+    mark: "cloud",
     title: "IoT Data, Dashboards & Automation",
     summary:
       "Turn raw device data into structured, monitored, actionable information — with alerting and integrations.",
@@ -105,6 +118,7 @@ const services = [
   },
   {
     id: "prototype",
+    mark: "sensor",
     title: "Prototype, MVP & Field Trial Support",
     summary:
       "Move from idea to working prototype to field trial — with wiring, testing, installation planning, and commissioning.",
@@ -124,6 +138,7 @@ const services = [
   },
   {
     id: "troubleshooting",
+    mark: "tools",
     title: "Troubleshooting & System Hardening",
     summary:
       "Fix unreliable connected systems and make them robust, maintainable, diagnosable, and supportable.",
@@ -143,6 +158,7 @@ const services = [
   },
   {
     id: "hardware",
+    mark: "chip",
     title: "Hardware & PCB Support",
     summary:
       "Practical hardware guidance — schematic review, component selection, PCB support, and design-for-deployment advice.",
@@ -171,7 +187,7 @@ export default function ServicesPage() {
             <span className="inline-block rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
               Services
             </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-bold tracking-[-0.035em] text-slate-900 sm:text-5xl">
               IoT engineering services
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
@@ -201,7 +217,8 @@ export default function ServicesPage() {
             >
               <div className="grid gap-10 lg:grid-cols-5 lg:items-start">
                 <div className="lg:col-span-2">
-                  <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                  <FamilyIcon name={service.mark} className="mb-5 h-14 w-14" />
+                  <h2 className="text-2xl font-bold tracking-[-0.035em] text-slate-900 sm:text-3xl">
                     {service.title}
                   </h2>
                   <p className="mt-3 text-base font-medium text-brand-700">{service.summary}</p>

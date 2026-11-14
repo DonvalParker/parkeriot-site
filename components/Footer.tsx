@@ -1,13 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/parkeriot-logo.png";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <div className="container-tight grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Image src={logo} alt="ParkerIoT" className="h-7 w-auto" />
+          <Logo className="h-7 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
             UK-based IoT engineering — connected device development, embedded firmware,
             Raspberry Pi and Linux edge systems, remote monitoring, and field deployment

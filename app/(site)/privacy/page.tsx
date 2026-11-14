@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           <span className="inline-block rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
             Legal
           </span>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-[-0.035em] text-slate-900 sm:text-5xl">
             Privacy notice
           </h1>
           <p className="mt-4 text-sm text-slate-500">Last updated {updated}</p>
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             of the website.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">Who we are</h2>
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">Who we are</h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
             The controller is ParkerIoT Limited, registered in England &amp; Wales, company no.
             16308954, registered office 42 Mayfield Avenue, Lancaster, LA1 2PF.
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             privacy question, correction, or deletion request.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             What we collect
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
             do not ask for it.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             Why we use it
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
             That is our legitimate interest in running a reliable website.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             Who else receives it
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
             establish, exercise, or defend a legal claim.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             Transfers outside the UK
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
             the safeguards we rely on.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             How long we keep it
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
 
           <h2
             id="cookies"
-            className="mt-12 scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900"
+            className="mt-12 scroll-mt-24 text-2xl font-semibold tracking-[-0.035em] text-slate-900"
           >
             Cookies
           </h2>
@@ -147,7 +147,7 @@ export default function PrivacyPage() {
             tracking.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">Your rights</h2>
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">Your rights</h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">You can ask us to:</p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed text-slate-600">
             <li>confirm whether we hold information about you, and for a copy of it</li>
@@ -173,7 +173,7 @@ export default function PrivacyPage() {
             one month.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">Complaints</h2>
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">Complaints</h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
             If you are unhappy with how we handle your information, email us first. You can also
             complain to the Information Commissioner&apos;s Office, the UK regulator for personal
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
             , or by post to Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF.
           </p>
 
-          <h2 className="mt-12 text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="mt-12 text-2xl font-semibold tracking-[-0.035em] text-slate-900">
             Changes to this notice
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
